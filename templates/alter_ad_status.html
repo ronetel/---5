@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h3>Изменить статус объявления</h3>
+  <form method="post">
+    <div class="mb-3">
+      <label for="ad_id" class="form-label">ID щбъявления</label>
+      <input type="number" class="form-control" id="ad_id" name="ad_id" required>
+    </div>
+    <div class="mb-3">
+      <label for="new_status" class="form-label">Новый статус</label>
+      <select class="form-select" id="new_status" name="new_status" required>
+        <option value="1">Открыто</option>
+        <option value="2">Закрыто</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Изменить</button>
+  </form>
+{% endblock %}

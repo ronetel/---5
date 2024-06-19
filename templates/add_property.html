@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Вся недвига</h1>
+    <ul>
+        {% for ad in ads %}
+            <li>ID: {{ ad[0]}} | Владелец: {{ ad[4] }} | Активна: {{ ad[3] }}</li>
+        {% endfor %}
+    </ul>
+  
+  <h3>Добавить недвижимость</h3>
+  <form method="post">
+    <div class="mb-3">
+      <label for="key" class="form-label">Пароль</label>
+      <input type="password" class="form-control" id="key" name="key" required>
+    </div>
+    <div class="mb-3">
+      <label for="prop_size" class="form-label">Размер (кв.м.)</label>
+      <input type="number" class="form-control" id="prop_size" name="prop_size" required>
+    </div>
+    <div class="mb-3">
+      <label for="prop_photo_url" class="form-label">Ссылка на фото</label>
+      <input type="text" class="form-control" id="prop_photo_url" name="prop_photo_url" required>
+    </div>
+    <div class="mb-3">
+      <label for="prop_rooms" class="form-label">Количество комнат</label>
+      <input type="number" class="form-control" id="prop_rooms" name="prop_rooms" required>
+    </div>
+    <div class="mb-3">
+      <label for="prop_type" class="form-label">Тип недвижимости</label>
+      <select class="form-select" id="prop_type" name="prop_type" required>
+        <option value="1">Дом</option>
+        <option value="2">Квартира</option>
+        <option value="3">Лофт</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Добавить недвижимость</button>
+  </form>
+{% endblock %}

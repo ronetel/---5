@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Все объявления</h1>
+    <ul>
+        {% for ad in ads %}
+            <li>Владелец: {{ ad[0] }} | Цена: {{ ad[2] }} | Активно: {{ ad[4] }}</li>
+        {% endfor %}
+    </ul>
+    <div class="mb-3">
+      <label for="key" class="form-label">Пароль</label>
+      <input type="text" class="form-control" id="key" name="key" required>
+    </div>
+  <h3>Создать объявление</h3>
+  <form method="post">
+    <div class="mb-3">
+      <label for="estate_id" class="form-label">ID недвижимости</label>
+      <input type="number" class="form-control" id="estate_id" name="estate_id" required>
+    </div>
+    <div class="mb-3">
+      <label for="ad_price" class="form-label">Цена (эфиры)</label>
+      <input type="number" class="form-control" id="ad_price" name="ad_price" required step="0.01">
+    </div>
+    <button type="submit" class="btn btn-primary">Создать</button>
+  </form>
+{% endblock %}

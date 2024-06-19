@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Все объявления</h1>
+    <ul>
+        {% for ad in ads %}
+            <li>Владелец: {{ ad[0] }} | Цена: {{ ad[2] }}</li>
+        {% endfor %}
+    </ul>
+  <h3>Купить недвижимость</h3>
+  <form method="post">
+    <div class="mb-3">
+      <label for="ad_id" class="form-label">ID недвижимости</label>
+      <input type="number" class="form-control" id="ad_id" name="ad_id" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Купить</button>
+  </form>
+{% endblock %}

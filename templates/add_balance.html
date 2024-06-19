@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h3>Пополнить баланс</h3>
+  <form method="post">
+    <div class="mb-3">
+      <label for="sum" class="form-label">Колличество (эфиры)</label>
+      <input type="number" class="form-control" id="sum" name="sum" required step="0.01">
+    </div>
+    <button type="submit" class="btn btn-primary">Пополнить</button>
+  </form>
+{% endblock %}

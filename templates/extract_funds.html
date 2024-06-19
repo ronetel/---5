@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h3>Вывести средства</h3>
+  <form method="post">
+    <div class="mb-3">
+      <label for="withdraw_amount" class="form-label">Колличество (эфиры)</label>
+      <input type="number" class="form-control" id="withdraw_amount" name="withdraw_amount" required step="0.01">
+    </div>
+    <button type="submit" class="btn btn-primary">Вывести</button>
+  </form>
+{% endblock %}

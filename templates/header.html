@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h2 class="text-center">Салам, {{ account }}</h2>
+      <div class="list-group">
+        <a class="list-group-item list-group-item-action" href="{{ url_for('add_property', account=account) }}">Добавить недвижимость</a>
+        <a class="list-group-item list-group-item-action" href="{{ url_for('transaction', account=account) }}">Перевести с деньги</a>
+        <a class="list-group-item list-group-item-action" href="{{ url_for('add_advertisement', account=account) }}">Создать объявление</a>
+        <a class="list-group-item list-group-item-action" href="{{ url_for('add_balance', account=account) }}">Пополнить баланс</a>
+        <a class="list-group-item list-group-item-action" href="{{ url_for('extract_funds', account=account) }}">Вывести</a>
+        <a class="list-group-item list-group-item-action" href="{{ url_for('alter_property_status', account=account) }}">Изменить статус недвижимости</a>
+        <a class="list-group-item list-group-item-action" href="{{ url_for('alter_ad_status', account=account) }}">Изменить статус объявления</a>
+        <a class="list-group-item list-group-item-action" href="{{ url_for('buy_property', account=account) }}">Купить недвигу</a>
+        <a class="list-group-item list-group-item-action" href="{{ url_for('show_account_balance', account=account) }}">Баланс</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

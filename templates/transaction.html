@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h3>Перевести с одного счета на другой</h3>
+  <form method="post">
+    <div class="mb-3">
+      <label for="receiver_account" class="form-label">Аккаунт получателя</label>
+      <input type="text" class="form-control" id="receiver_account" name="receiver_account" required>
+    </div>
+    <div class="mb-3">
+      <label for="amount" class="form-label">Колличество (эфиры)</label>
+      <input type="number" class="form-control" id="amount" name="amount" required step="0.01">
+    </div>
+    <button type="submit" class="btn btn-primary">Перевести</button>
+  </form>
+{% endblock %}
